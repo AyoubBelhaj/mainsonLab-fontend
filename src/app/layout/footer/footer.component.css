@@ -1,6 +1,9 @@
 .container{
     width: 100%;
 }
+footer{
+    width: 100%;
+}
 h5 {
     font-weight: bold;
 }
