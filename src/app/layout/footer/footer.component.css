@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+}
+h5 {
+    font-weight: bold;
+}
+.row {
+    background-color: #F3F3FA;
+    height: 398px;
+}
+.logofooternav{
+    background-color: #1C3988;
+    height: 191px;
+}

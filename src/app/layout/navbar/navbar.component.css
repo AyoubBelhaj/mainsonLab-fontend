@@ -1,0 +1,14 @@
+.btn {
+    color : white;
+    background-color: #1C3988;
+    border-color: #1C3988;
+}
+.profile-img {
+    margin-top: -5px;
+    margin-right: 5px;
+    float: left;
+    background: url(../../../assets/images/undraw_drink_coffee_v3au.svg);
+    background-size: auto 100%;
+    width: 40px;
+    height: 40px;
+}
