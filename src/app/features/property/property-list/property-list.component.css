@@ -1,0 +1,77 @@
+.show-btn {
+    background-color: white;
+    color: #1C3988;
+    border: 1px solid #1C3988;
+}
+
+.card {
+    border-radius: 0%;
+}
+
+.card-img-top {
+    border-radius: 0%;
+}
+
+.card-title {
+    font-weight: bold;
+    font-family: "Merriweather";
+    font-size: 21.25;
+}
+
+.card-price {
+    position: absolute;
+    bottom: 30px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 17;
+    color: #1C3988;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 6px #F3F3FA;
+    margin: 40px;
+}
+
+.card-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 cards per row with 20px gap adjustment */
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.custom-card {
+    width: 100%;
+    max-width: 350px;
+    height: 420px; 
+    border-radius: 2px;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-location {
+    position: absolute;
+    bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .card-item {
+        flex: 1 1 calc(48% - 20px); /* 2 cards per row on medium screens */
+        max-width: calc(48% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-item {
+        flex: 1 1 100%; /* 1 card per row on smaller screens */
+        max-width: 100%;
+    }
+}

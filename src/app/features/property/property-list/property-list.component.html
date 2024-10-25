@@ -1,1 +1,21 @@
-<p>property-list works!</p>
+<div class="container-fluid px-4 py-4"> 
+    <div class="card-container">
+        <div class="card-item" *ngFor="let property of properties"> 
+            <div class="card shadow bg-white custom-card"> 
+                <img [src]="property.img" class="card-img-top" alt="{{property.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{property.title}}</h5>
+                    <p class="card-text card-price">{{property.price}}</p>
+                    <p class="card-text card-location">{{property.location}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row py-4">
+        <div class="col-md-6 offset-md-3 text-center">
+            <button class="btn btn-primary show-btn">
+                Show next
+            </button>
+        </div>
+    </div>
+</div>
