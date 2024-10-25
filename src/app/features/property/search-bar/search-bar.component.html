@@ -1,0 +1,73 @@
+<div class="container-fluid mt-5">
+    <div class="row small-raw mb-4">
+        <div class="col-md-4 offset-md-4">
+            <h1>Search for an offer</h1>
+            <p>choose from the most advantageous offers</p>
+        </div>
+    </div>
+    <div class="row big-row px-4 py-4">
+        <form class="d-flex col-md-4 offset-md-4">
+            <input class="form-control me-2" type="search" placeholder="Enter a Keyboard">
+            <button type="button" class="btn btn-primary d-inline-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-search me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                    </path>
+                </svg>
+                Search
+            </button>
+        </form>
+    </div>
+    <div class="row justify-content-md-center" style="background-color: #F3F3FA;">
+        <div class="col col-lg-4">
+            <hr>
+        </div>
+        <div class="col-md-auto"><span>Filter Setting</span></div>
+        <div class="col col-lg-4">
+            <hr>
+        </div>
+    </div>
+    <div class="row row-categ justify-content-md-center px-5 py-4">
+        <div class="col ">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Sale</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col ">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select room flat</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col ">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select location</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="col ">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Most expensive</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center pb-4" style="background-color: #F3F3FA;">
+        <div class="col-5 ">
+            <mat-slider [discrete]="true"  min="0" max="900">
+                <input matSliderStartThumb>
+                <input matSliderEndThumb>
+            </mat-slider>
+        </div>
+    </div>
+</div>

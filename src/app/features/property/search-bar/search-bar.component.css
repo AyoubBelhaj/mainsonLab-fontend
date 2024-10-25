@@ -1,0 +1,32 @@
+
+h1 {
+    font-weight: bold;
+    font-size: 51.8;
+}
+
+.big-row {
+    background-color: #F3F3FA;
+}
+
+.big-row .btn {
+    background-color: #1C3988;
+}
+
+.row-categ {
+    background-color: #F3F3FA;
+}
+.form-select {
+    border: 1px solid black;
+}
+select option {
+    font-size: 17;
+}
+
+span {
+    opacity: 50%;
+}
+
+mat-slider {
+    color: #1C3988;
+    width: 100%;
+}
