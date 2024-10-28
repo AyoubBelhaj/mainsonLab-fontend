@@ -1,6 +1,6 @@
 <div class="container-fluid px-4 py-4"> 
     <div class="card-container">
-        <div class="card-item" *ngFor="let property of properties"> 
+        <div class="card-item" *ngFor="let property of this.properties"> 
             <div class="card shadow bg-white custom-card"> 
                 <img [src]="property.imageUrl" class="card-img-top" alt="{{property.title}}">
                 <div class="card-body">

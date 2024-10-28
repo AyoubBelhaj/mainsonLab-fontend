@@ -6,9 +6,9 @@
         </div>
     </div>
     <div class="row big-row px-4 py-4">
-        <form class="d-flex col-md-4 offset-md-4">
-            <input class="form-control me-2" type="search" placeholder="Enter a Keyboard">
-            <button type="button" class="btn btn-primary d-inline-flex align-items-center">
+        <form  class="d-flex col-md-4 offset-md-4">
+            <input #key="ngModel" ngModel class="form-control me-2" type="search" placeholder="Enter a Keyboard" [ngModelOptions]="{standalone: true}">
+            <button (click)="searchProperty(key.value)" type="submit" class="btn btn-primary d-inline-flex align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-search me-2" viewBox="0 0 16 16">
                     <path
