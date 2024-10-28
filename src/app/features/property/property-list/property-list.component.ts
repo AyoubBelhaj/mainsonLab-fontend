@@ -1,5 +1,8 @@
 import { CommonModule, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Property } from '../../../models/property';
+import { PropertyService } from '../../../services/property.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-property-list',
@@ -8,8 +11,30 @@ import { Component } from '@angular/core';
   templateUrl: './property-list.component.html',
   styleUrl: './property-list.component.css'
 })
-export class PropertyListComponent {
-  properties = [
+export class PropertyListComponent implements OnInit{
+
+  public property! : Property;
+  public properties : Property[];
+
+  constructor(private propertyService : PropertyService){
+    this.properties = [] ;
+  }
+  ngOnInit(): void {
+    this.getProperties();
+  }
+
+  getProperties() {
+    this.propertyService.getProperties().subscribe(
+      (response: Property[]) => {
+        this.properties = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  /* properties = [
     { title: 'Large 4-room apartment with a beautiful terrace', price: '2500 DTN', location: 'Nabeul', img: '../../../../assets/images/maison.png' },
     { title: '5i large design apartment with terrace', price: '3000 DTN', location: 'Tunis', img: '../../../../assets/images/maison3.png' },
     { title: 'Magnificent duplex in a private villa', price: '1500 DTN', location: 'Sousse', img: '../../../../assets/images/maison2.png'},
@@ -19,5 +44,5 @@ export class PropertyListComponent {
     { title: 'Large 4-room apartment with a beautiful terrace', price: '2500 DTN', location: 'Nabeul', img: '../../../../assets/images/maison.png' },
     { title: '5i large design apartment with terrace', price: '3000 DTN', location: 'Tunis', img: '../../../../assets/images/maison3.png' },
     { title: 'Magnificent duplex in a private villa', price: '1500 DTN', location: 'Sousse', img: '../../../../assets/images/maison2.png' },
-  ];
+  ]; */
 }

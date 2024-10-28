@@ -2,7 +2,7 @@
     <div class="card-container">
         <div class="card-item" *ngFor="let property of properties"> 
             <div class="card shadow bg-white custom-card"> 
-                <img [src]="property.img" class="card-img-top" alt="{{property.title}}">
+                <img [src]="property.imageUrl" class="card-img-top" alt="{{property.title}}">
                 <div class="card-body">
                     <h5 class="card-title">{{property.title}}</h5>
                     <p class="card-text card-price">{{property.price}}</p>
