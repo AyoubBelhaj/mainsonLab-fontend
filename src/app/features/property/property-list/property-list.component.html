@@ -1,6 +1,6 @@
 <div class="container-fluid px-4 py-4"> 
     <div class="card-container">
-        <div class="card-item" *ngFor="let property of this.properties"> 
+        <div class="card-item" *ngFor="let property of this.displayedProperties"> 
             <div class="card shadow bg-white custom-card"> 
                 <img [src]="property.imageUrl" class="card-img-top" alt="{{property.title}}">
                 <div class="card-body">
@@ -13,7 +13,7 @@
     </div>
     <div class="row py-4">
         <div class="col-md-6 offset-md-3 text-center">
-            <button class="btn btn-primary show-btn">
+            <button (click)="nextPage()" [disabled]="(currentPage * numberOfItemsPerPage) >= properties.length" class="btn btn-primary show-btn">
                 Show next
             </button>
         </div>

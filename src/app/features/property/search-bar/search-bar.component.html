@@ -35,11 +35,10 @@
                 <option value="sale">sale</option>
                 <option value="rent">rent</option>
             </select>
-            <p>selected type : {{selectedType}}</p>
         </div>
         <div class="col ">
             <select [(ngModel)]="selectedRooms" class="form-select" aria-label="Default select example" (ngModelChange)="onFilterChange()">
-                <option value="" selected disabled>Select room flat</option>
+                <option value="" selected disabled>Select Bedrooms</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

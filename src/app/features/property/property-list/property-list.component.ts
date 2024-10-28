@@ -15,6 +15,9 @@ export class PropertyListComponent implements OnInit {
 
   public properties: Property[] = [];
   public originalProperties: Property[] = []; 
+  public displayedProperties: Property[] = [];
+  public numberOfItemsPerPage : number = 9 ;
+  public currentPage : number = 1 ;
 
   @Input() filters: any;
   @Input() searchKeyword: string = '';
@@ -46,6 +49,7 @@ export class PropertyListComponent implements OnInit {
     this.properties = [...this.originalProperties]; 
     this.applyFiltersManually();
     this.sortProperties();
+    this.updateDisplayedProperties();
   }
 
   applyFiltersManually() {
@@ -78,6 +82,8 @@ export class PropertyListComponent implements OnInit {
         );
       }
     }
+    this.currentPage = 1;
+    this.updateDisplayedProperties();
   }
 
   searchProperty(key: string) {
@@ -98,5 +104,17 @@ export class PropertyListComponent implements OnInit {
         return this.filters.sort === "MostEx" ? b.price - a.price : a.price - b.price;
       });
     }
+  }
+
+  nextPage() {
+    if ((this.currentPage * this.numberOfItemsPerPage) < this.properties.length) {
+      this.currentPage++;
+      this.updateDisplayedProperties();
+    }
+  }
+  updateDisplayedProperties() {
+    let startIndex = 0;
+    let endIndex = this.currentPage * this.numberOfItemsPerPage ;
+    this.displayedProperties = this.properties.slice(startIndex,endIndex);
   }
 }
