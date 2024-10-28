@@ -1,2 +1,2 @@
-<app-search-bar></app-search-bar>
-<app-property-list></app-property-list>
+<app-search-bar (searchEvent)="onSearchEvent($event)" (filterEvent)="onFilterEvent($event)"></app-search-bar>
+<app-property-list [searchKeyword]="searchKeyword" [filters]="selectedFilters"></app-property-list>

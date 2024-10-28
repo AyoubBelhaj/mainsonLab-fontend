@@ -10,5 +10,14 @@ import { PropertyListComponent } from "../property-list/property-list.component"
   styleUrl: './property-page.component.css'
 })
 export class PropertyPageComponent {
+  searchKeyword: string = '';
+  selectedFilters: any = {};
 
+  onSearchEvent(keyword: string) {
+    this.searchKeyword = keyword;
+  }
+
+  onFilterEvent(filters: any) {
+    this.selectedFilters = filters;
+  }
 }

@@ -37,6 +37,6 @@ export class PropertyService {
 
   public searchByKeywors(keyword : string) : Observable<Property[]> {
     let params = new HttpParams().set("keyword",keyword); 
-    return this.http.get<Property[]>(`${this.apiServerUrl}/filter/bedrooms`,{params: params});
+    return this.http.get<Property[]>(`${this.apiServerUrl}/search`,{params: params});
   }
 }
