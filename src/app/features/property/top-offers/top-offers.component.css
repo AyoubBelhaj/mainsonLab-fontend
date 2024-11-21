@@ -1,0 +1,112 @@
+/* General Styling */
+.search-bar {
+    display: flex;
+    width: 737px;
+    max-width: 100%;
+    background-color: #DDDDDD;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 10;
+
+}
+
+/* Inputs and Select Styling */
+.search-bar .form-control,
+.search-bar .form-select {
+    background-color: #ced4da;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+}
+
+h1 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 64.85px;
+}
+
+h2 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 51.88px;
+}
+
+.lead {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21.25px;
+}
+
+.btn-primary {
+    background-color: #1C3988;
+}
+
+.top-offers-section {
+    width: 100%;
+    height: 920px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Carousel Styling */
+#topOffersCarousel {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 350px;
+    width: 100%;
+    max-width: 350px;
+    height: 420px; 
+    border-radius: 2px;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    flex: 1;
+}
+
+.progress-bar {
+    height: 2px;
+    color: #1C3988;
+    border-radius: 4px;
+}
+
+.next,
+.prev {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next {
+    background-image: url("../../../../assets/images/next.png");
+}
+
+.prev {
+    background-image: url("../../../../assets/images/prev.png");
+}
+
+
+@media (min-width: 992px) {
+    .search-input {
+        width: 737px !important;
+        height: 104px !important;
+    }
+
+    .form-select {
+        width: 205px !important;
+    }
+
+    .form-control {
+        width: 302px !important;
+    }
+}
+

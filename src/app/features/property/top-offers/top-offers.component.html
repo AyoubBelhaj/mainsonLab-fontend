@@ -1,0 +1,65 @@
+<div class="container mt-5">
+    <!-- First Section -->
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-6">
+            <h1 class="display-4">Modern Living for all</h1>
+            <p class="lead">We provide a complete service for the sale, purchase or rental of real estate. We operate
+                Tunis, Sousse and Sfax.</p>
+            <div class="search-bar p-3 rounded d-flex align-items-center gap-2">
+                <select class="form-select bg-light" aria-label="Property Type">
+                    <option selected>Property Type</option>
+                    <option value="1">Apartment</option>
+                    <option value="2">Villa</option>
+                    <option value="3">Commercial</option>
+                </select>
+                <input type="text" class="form-control bg-light" placeholder="📍 Location search" />
+                <button class="btn btn-primary d-inline-flex align-items-center" type="button"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search me-2" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                        </path>
+                    </svg>Search</button>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="assets/images/headerpicture.jpg" alt="Header Image" class="img-fluid rounded" />
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center my-5 p-0">
+    <div class="top-offers-section">
+        <div class="d-flex justify-content-between align-items-center mt-5 pt-5 mx-5 px-5">
+            <div>
+                <h2>Top Offers</h2>
+                <p>Make your career dreams come true, take full advantage of all the achievements of the city center and
+                    luxury housing.</p>
+            </div>
+            <button class="btn btn-outline-primary">View all offers</button>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mx-5 px-5">
+            <div class="progress-indicator">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>
+                <button class="btn  me-2 prev" (click)="prev()"></button>
+                <button class="btn  next" (click)="next()"></button>
+            </div>
+        </div>
+
+        <div class="position-relative mt-3 ms-5 ps-5 me-0">
+            <div class="d-flex overflow-auto " id="topOffersCarousel">
+                <div class="card me-3" *ngFor="let offer of offers">
+                    <img [src]="offer.imageUrl" class="card-img-top" alt="Offer Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ offer.title }}</h5>
+                        <p class="card-text">{{ offer.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
