@@ -20,6 +20,10 @@ export class PropertyService {
     return this.http.get<Property[]>(`${this.apiServerUrl}/all`);
   }
 
+  public getOneProperties(id : number) : Observable<Property> {
+    return this.http.get<Property>(`${this.apiServerUrl}/${id}`);
+  }
+
   public filterByPriceRange(minPrice : number, maxPrice : number) : Observable<Property[]> {
     let params = new HttpParams().set("minPrice",minPrice).set("maxPrice", maxPrice); 
     return this.http.get<Property[]>(`${this.apiServerUrl}/filter/price`,{params: params});

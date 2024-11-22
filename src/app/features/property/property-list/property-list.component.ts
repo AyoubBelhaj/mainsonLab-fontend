@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Property } from '../../../models/property';
 import { PropertyService } from '../../../services/property.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-property-list',
@@ -22,7 +23,7 @@ export class PropertyListComponent implements OnInit {
   @Input() filters: any;
   @Input() searchKeyword: string = '';
 
-  constructor(private propertyService: PropertyService) { }
+  constructor(private propertyService: PropertyService,private router: Router) { }
 
   ngOnInit(): void {
     this.getProperties();
@@ -116,5 +117,8 @@ export class PropertyListComponent implements OnInit {
     let startIndex = 0;
     let endIndex = this.currentPage * this.numberOfItemsPerPage ;
     this.displayedProperties = this.properties.slice(startIndex,endIndex);
+  }
+  viewDetails(id: number) {
+    this.router.navigate(['/property', id]); 
   }
 }

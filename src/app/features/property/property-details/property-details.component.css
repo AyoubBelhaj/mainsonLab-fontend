@@ -1,0 +1,81 @@
+h1 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 69px;
+}
+
+h3 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contact,
+.locator-info,
+.brief-char,
+.ratings,
+.opinions {
+    background-color: #F3F3FA;
+}
+
+.submit {
+    background-color: #F3F3FA;
+    color: #1C3988;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+.profile-img {
+    margin-top: -5px;
+    margin-right: 5px;
+    float: left;
+    background: url("../../../../assets/images/undraw_Drink_coffee_v3au.svg");
+    background-size: auto 100%;
+    width: 126px;
+    height: 126px;
+}
+
+.img-fluid {
+    width: 735px;
+    height: 363px;
+}
+
+.thumbnails-container {
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.img-thumbnail {
+    border: none;
+}
+
+.next,
+.prev {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next {
+    background-image: url("../../../../assets/images/next.png");
+}
+
+.prev {
+    background-image: url("../../../../assets/images/prev.png");
+}
+
+.match-parent {
+    width: 100%;
+    max-width: 610px;
+    height: 368.8px;
+}

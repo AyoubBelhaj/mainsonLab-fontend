@@ -1,0 +1,173 @@
+<div class="container mt-5">
+    <!-- Title -->
+    <h1 class="display-5 mb-4">{{property?.title}}</h1>
+
+    <!-- Main Layout -->
+    <div class="row">
+        <!-- Left Section -->
+        <div class="col-lg-8 d-flex flex-column align-items-center">
+            <!-- Photo Gallery -->
+            <div class="mb-4">
+                <div class="mb-3">
+                    <img src={{property?.imageUrl}} alt="Main Image" class="img-fluid w-100">
+                </div>
+                <div class="d-flex align-items-center">
+                    <!-- Prev Button -->
+                    <button class="btn btn-primary me-3 prev" (click)="prev()"></button>
+
+                    <!-- Thumbnails -->
+                    <div class="thumbnails-container d-flex flex-nowrap overflow-hidden">
+                        <img src={{property?.imageUrl}} alt="Thumbnail 1" class="img-thumbnail"
+                            style="width: 191.32px; height: 84.44px;">
+                        <img src={{property?.imageUrl}} alt="Thumbnail 2" class="img-thumbnail"
+                            style="width: 191.32px; height: 84.44px;">
+                        <img src={{property?.imageUrl}} alt="Thumbnail 3" class="img-thumbnail"
+                            style="width: 191.32px; height: 84.44px;">
+                        <img src={{property?.imageUrl}} alt="Thumbnail 4" class="img-thumbnail"
+                            style="width: 191.32px; height: 84.44px;">
+                    </div>
+
+                    <!-- Next Button -->
+                    <button class="btn btn-primary ms-3 next" (click)="next()"></button>
+                </div>
+
+            </div>
+
+            <!-- Apartment Info -->
+            <div class="mb-4">
+                <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span><img src="../../../../assets/images/surface.png" alt="surface image" class="m-3">120
+                            m²</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span><img src="../../../../assets/images/location.png" alt="surface image"
+                                class="m-3">{{property?.location}}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-layers me-2"></i>
+                        <span><img src="../../../../assets/images/Outline.png" alt="surface image"
+                                class="m-3">{{property?.bedrooms}} Bedrooms</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 pt-3 px-3 d-flex justify-content-between align-items-center"
+                style="width: 609px; background-color: #F3F3FA;">
+                <p>Mortgage since: <br><span
+                        style="font-weight: bold; font-family: Merriweather;font-size: 21.25px;">{{property?.price}}
+                        DTN/month</span></p>
+                <button class="btn btn-primary" style="height: 48px; background-color: #1C3988;">Get a mortgage</button>
+            </div>
+
+            <div class="mb-3"><video width="735px" height="363px">
+                    <source src="https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/
+                        Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4" type="video/mp4" />
+                </video></div>
+
+            <div class="mb-3 py-3 px-3 d-flex justify-content-between align-items-center"
+                style="width: 609px; background-color: #F3F3FA;">
+                <p><span style="font-weight: bold; font-family: Merriweather;font-size: 17px;">Visit</span> the house
+                    throw our video !<br>if you have your <span
+                        style="font-weight: bold; font-family: Merriweather;font-size: 17px;">own forniture ?</span></p>
+                <button class="btn btn-primary" style="height: 48px; background-color: #1C3988;">Place your
+                    forniture</button>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4" style="text-align: left; width: 610px;">
+                <h3>Description</h3>
+                <p>{{property?.description}}</p>
+            </div>
+
+            <div class="map" id="map" class="mb-4 match-parent"><app-map></app-map></div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-lg-4 mb-3">
+            <!-- Contact Us -->
+            <div class="card mb-4 contact">
+                <div class="card-body">
+                    <h3>Contact Us</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="3"
+                                placeholder="Write your message"></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="agree">
+                            <label for="agree" class="form-check-label">I agree to the terms and conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Locator Info -->
+            <div class="card mb-4 locator-info">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <div class="img-rounded profile-img my-3"></div>
+                    <p><i class="bi bi-geo-alt me-2"></i> Tunis, Sousse</p>
+                    <p><i class="bi bi-telephone me-2"></i> +216 12345678</p>
+                    <p><i class="bi bi-envelope me-2"></i> email.com</p>
+                </div>
+            </div>
+
+            <!-- Brief Characteristics -->
+            <div class="card mb-4 brief-char">
+                <div class="card-body">
+                    <h3>Brief Characteristics</h3>
+                    <ul>
+                        <li>3 Bedrooms</li>
+                        <li>2 Bathrooms</li>
+                        <li>Modern Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="mb-4 ratings p-3">
+                <h3>Rate the Apartment</h3>
+                <form>
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star text-muted"></i>
+                        <i class="bi bi-star text-muted"></i>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Customer Opinions -->
+            <div class="opinions p-3">
+                <h3>Customer Opinions</h3>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p><strong>John Doe:</strong> Amazing apartment, had a great time here!</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p><strong>Jane Smith:</strong> Great location and amenities. Highly recommended!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
