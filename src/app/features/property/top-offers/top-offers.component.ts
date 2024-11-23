@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyService } from '../../../services/property.service';
 import { Property } from '../../../models/property';
 import { HttpErrorResponse } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-top-offers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterLink,CommonModule],
   templateUrl: './top-offers.component.html',
   styleUrl: './top-offers.component.css'
 })

@@ -1,0 +1,17 @@
+h2 {
+    font-family: Merriweather;
+    font-size: 51.88;
+    font-weight: bold;
+}
+
+.social-icon {
+    width: 192px;
+    height: 176px;
+}
+
+.social-a {
+    text-decoration: none;
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 40px;
+}
