@@ -52,7 +52,7 @@
 
         <div class="position-relative mt-3 ms-5 ps-5 me-0">
             <div class="d-flex overflow-auto " id="topOffersCarousel">
-                <div class="card me-3" *ngFor="let offer of filteredOffers">
+                <div class="card me-3" *ngFor="let offer of filteredOffers" (click)="viewDetails(offer.id)">
                     <img [src]="offer.imageUrl" class="card-img-top" alt="Offer Image">
                     <div class="card-body">
                         <h5 class="card-title">{{ offer.title }}</h5>

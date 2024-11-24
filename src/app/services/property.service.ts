@@ -20,6 +20,10 @@ export class PropertyService {
     return this.http.get<Property[]>(`${this.apiServerUrl}/all`);
   }
 
+  public addProperty(property: Property) :  Observable<Property> {
+    return this.http.post<Property>(`${this.apiServerUrl}/add`,property);
+  }
+
   public getOneProperties(id : number) : Observable<Property> {
     return this.http.get<Property>(`${this.apiServerUrl}/${id}`);
   }

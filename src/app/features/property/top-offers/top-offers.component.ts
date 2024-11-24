@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyService } from '../../../services/property.service';
 import { Property } from '../../../models/property';
 import { HttpErrorResponse } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -19,7 +19,7 @@ export class TopOffersComponent implements OnInit {
   filteredOffers: Property[] = [];
   offers: Property[] = [];
 
-  constructor(private propertyService: PropertyService) {}
+  constructor(private propertyService: PropertyService, private router : Router) {}
 
   ngOnInit(): void {
     this.propertyService.getProperties().subscribe(
@@ -55,5 +55,8 @@ export class TopOffersComponent implements OnInit {
     } else {
       this.filteredOffers = [...this.offers]; // Reset to show all offers if no filter is applied
     }
+  }
+  viewDetails(id: number) {
+    this.router.navigate(['/property', id]); 
   }
 }

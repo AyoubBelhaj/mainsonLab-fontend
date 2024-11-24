@@ -79,3 +79,12 @@ p {
     max-width: 610px;
     height: 368.8px;
 }
+ul {
+    list-style-type: none;
+}
+
+ul li span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
