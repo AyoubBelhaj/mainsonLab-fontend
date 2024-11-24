@@ -4,39 +4,34 @@ import { PropertyService } from '../../../services/property.service';
 import { Property } from '../../../models/property';
 import { HttpErrorResponse } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-top-offers',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule, FormsModule],
   templateUrl: './top-offers.component.html',
   styleUrl: './top-offers.component.css'
 })
-export class TopOffersComponent implements OnInit{
+export class TopOffersComponent implements OnInit {
+  selectedType: string = '';
+  searchLocation: string = '';
+  filteredOffers: Property[] = [];
+  offers: Property[] = [];
+
+  constructor(private propertyService: PropertyService) {}
 
   ngOnInit(): void {
     this.propertyService.getProperties().subscribe(
       (response: Property[]) => {
-        this.offers = response;  
+        this.offers = response;
+        this.filteredOffers = [...this.offers]; // Default to showing all offers
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     );
   }
-
-  constructor(private propertyService: PropertyService) { }
-  offers = this.propertyService.properties;
-  offersnah = [
-    { title: 'Offer 1', description: 'Description for Offer 1', image: 'assets/offer1.jpg' },
-    { title: 'Offer 2', description: 'Description for Offer 2', image: 'assets/offer2.jpg' },
-    { title: 'Offer 3', description: 'Description for Offer 3', image: 'assets/offer3.jpg' },
-    { title: 'Offer 4', description: 'Description for Offer 4', image: 'assets/offer4.jpg' },
-    { title: 'Offer 1', description: 'Description for Offer 1', image: 'assets/offer1.jpg' },
-    { title: 'Offer 2', description: 'Description for Offer 2', image: 'assets/offer2.jpg' },
-    { title: 'Offer 3', description: 'Description for Offer 3', image: 'assets/offer3.jpg' },
-    { title: 'Offer 4', description: 'Description for Offer 4', image: 'assets/offer4.jpg' },
-  ];
 
   next() {
     const carousel = document.getElementById('topOffersCarousel')!;
@@ -46,5 +41,19 @@ export class TopOffersComponent implements OnInit{
   prev() {
     const carousel = document.getElementById('topOffersCarousel')!;
     carousel.scrollLeft -= 220;
+  }
+
+  filterOffers() {
+    if (this.selectedType || this.searchLocation) {
+      this.filteredOffers = this.offers.filter((offer) => {
+        const matchesType = this.selectedType ? offer.type === this.selectedType : true;
+        const matchesLocation = this.searchLocation
+          ? offer.location.toLowerCase().includes(this.searchLocation.toLowerCase())
+          : true;
+        return matchesType && matchesLocation; // Use AND logic for both filters
+      });
+    } else {
+      this.filteredOffers = [...this.offers]; // Reset to show all offers if no filter is applied
+    }
   }
 }

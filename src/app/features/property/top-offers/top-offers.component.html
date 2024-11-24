@@ -6,14 +6,14 @@
             <p class="lead">We provide a complete service for the sale, purchase or rental of real estate. We operate
                 Tunis, Sousse and Sfax.</p>
             <div class="search-bar p-3 rounded d-flex align-items-center gap-2">
-                <select class="form-select bg-light" aria-label="Property Type">
-                    <option selected>Property Type</option>
-                    <option value="1">Apartment</option>
-                    <option value="2">Villa</option>
-                    <option value="3">Commercial</option>
+                <select [(ngModel)]="selectedType" class="form-select bg-light" aria-label="Property Type">
+                    <option value="" selected disabled>Property Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Commercial">Commercial</option>
                 </select>
-                <input type="text" class="form-control bg-light" placeholder="📍 Location search" />
-                <button class="btn btn-primary d-inline-flex align-items-center" type="button"><svg
+                <input type="text" class="form-control bg-light" placeholder="📍 Location search" #key="ngModel" ngModel [ngModelOptions]="{standalone: true}" [(ngModel)]="searchLocation" (input)="filterOffers()"/>
+                <button class="btn btn-primary d-inline-flex align-items-center" type="submit"><svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search me-2" viewBox="0 0 16 16">
                         <path
@@ -52,7 +52,7 @@
 
         <div class="position-relative mt-3 ms-5 ps-5 me-0">
             <div class="d-flex overflow-auto " id="topOffersCarousel">
-                <div class="card me-3" *ngFor="let offer of offers">
+                <div class="card me-3" *ngFor="let offer of filteredOffers">
                     <img [src]="offer.imageUrl" class="card-img-top" alt="Offer Image">
                     <div class="card-body">
                         <h5 class="card-title">{{ offer.title }}</h5>
