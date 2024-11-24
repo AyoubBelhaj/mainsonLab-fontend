@@ -1,0 +1,22 @@
+h1 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 64.85px;
+}
+h3 {
+    font-family: Merriweather;
+    font-weight: medium;
+    font-size: 36px;
+}
+.info-detail {
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+.owner-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.btn {
+    background-color: #1C3988;
+}
