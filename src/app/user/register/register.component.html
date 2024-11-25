@@ -1,25 +1,23 @@
 <div class="container d-flex align-items-center justify-content-center vh-100">
     <div class="row w-100">
         <!-- Logo -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary">
-            <div class="text-center">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="text-center" style="background-color: #1C3988;">
                 <img src="../../../assets/images/LogoMaison.png" alt="MaisonLab Logo" class="img-fluid mb-3"
                     style="width: 400px;">
-                <h1 class="text-white">MAISONLAB</h1>
             </div>
         </div>
 
         <!-- Form Section -->
-        <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
             <div class="w-75">
                 <!-- Title -->
-                <h2 class="text-primary fw-bold mb-4 text-center">Welcome to <span
-                        style="color: #007bff;">MAISONLAB</span></h2>
+                <h2 class="text-center mb-4">Welcome to <strong>MAISONLAB</strong></h2> 
 
                 <!-- Form -->
                 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                     <!-- Name -->
-                    <div class="form-group mb-4">
+                    <div class="form-group mb-4 ">
                         <label for="username" class="form-label text-secondary fw-bold">Username</label>
                         <div class="input-group shadow-sm">
                             <span class="input-group-text bg-white"><i class="bi bi-person text-primary"></i></span>
@@ -66,7 +64,7 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary w-100 rounded-pill fw-bold shadow"
-                        [disabled]="registerForm.invalid">
+                        [disabled]="registerForm.invalid" style="background-color: #1C3988;">
                         Sign up
                     </button>
                 </form>
