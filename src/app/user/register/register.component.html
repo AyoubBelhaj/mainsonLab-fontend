@@ -1,0 +1,76 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row w-100">
+        <!-- Logo -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary">
+            <div class="text-center">
+                <img src="../../../assets/images/LogoMaison.png" alt="MaisonLab Logo" class="img-fluid mb-3"
+                    style="width: 400px;">
+                <h1 class="text-white">MAISONLAB</h1>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
+            <div class="w-75">
+                <!-- Title -->
+                <h2 class="text-primary fw-bold mb-4 text-center">Welcome to <span
+                        style="color: #007bff;">MAISONLAB</span></h2>
+
+                <!-- Form -->
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <!-- Name -->
+                    <div class="form-group mb-4">
+                        <label for="username" class="form-label text-secondary fw-bold">Username</label>
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-white"><i class="bi bi-person text-primary"></i></span>
+                            <input type="text" id="username" class="form-control border-0" formControlName="username"
+                                placeholder="Enter your username">
+                        </div>
+                        <small *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                            class="text-danger">
+                            Name is required and should be at least 3 characters long.
+                        </small>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group mb-4">
+                        <label for="email" class="form-label text-secondary fw-bold">Email</label>
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-white"><i class="bi bi-envelope text-primary"></i></span>
+                            <input type="email" id="email" class="form-control border-0" formControlName="email"
+                                placeholder="Enter your email">
+                        </div>
+                        <small *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                            class="text-danger">
+                            Please enter a valid email.
+                        </small>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                        <label for="password" class="form-label text-secondary fw-bold">Password</label>
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-white"><i class="bi bi-lock text-primary"></i></span>
+                            <input [type]="isPasswordVisible ? 'text' : 'password'" id="password"
+                                class="form-control border-0" formControlName="password"
+                                placeholder="Enter your password">
+                            <span class="input-group-text bg-white" (click)="togglePasswordVisibility()">
+                                <i class="bi" [ngClass]="isPasswordVisible ? 'bi-eye-slash' : 'bi-eye'"></i>
+                            </span>
+                        </div>
+                        <small *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                            class="text-danger">
+                            Password must be at least 6 characters long.
+                        </small>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill fw-bold shadow"
+                        [disabled]="registerForm.invalid">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

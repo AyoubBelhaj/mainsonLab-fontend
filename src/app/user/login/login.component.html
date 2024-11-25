@@ -1,0 +1,80 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row w-100">
+      <!-- Logo -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center " >
+        <div class="text-center" style="background-color: #1C3988;">
+          <img src="../../../assets/images/LogoMaison.png" alt="MaisonLab Logo" class="img-fluid mb-3" style="width: 400px;">
+        </div>
+      </div>
+  
+      <!-- Form -->
+      <div class="col-md-6 p-5">
+        <h2 class="text-center mb-4">Welcome to <strong>MAISONLAB</strong></h2>
+        
+        <!-- Social Login Buttons -->
+        <div class="text-center mb-3">
+          <button class="btn btn-light w-100 mb-2 d-flex align-items-center justify-content-center" (click)="loginWithGoogle()">
+            <img 
+              src="../../../assets/images/google.jpg" 
+              alt="Google Logo" 
+              style="width: 30px; height: 20px; margin-right: 20px;">
+            Login with Google
+          </button>
+          <button class="btn btn-light w-100 d-flex align-items-center justify-content-center" (click)="loginWithFacebook()">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_(2019).svg" 
+              alt="Facebook Logo" 
+              style="width: 20px; height: 20px; margin-right: 10px;">
+            Login with Facebook
+          </button>
+        </div>
+        <div class="text-center my-3">OR</div>
+  
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+  
+        <!-- Login Form -->
+        <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+          <div class="form-group mb-3">
+            <label for="text" class="form-label">Username</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="username" 
+              [(ngModel)]="username" 
+              name="username" 
+              placeholder="username" 
+              required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                [(ngModel)]="password" 
+                name="password" 
+                placeholder="Enter your password" 
+                required>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" required>
+              <label for="rememberMe" class="form-check-label">Remember me</label>
+            </div>
+            <a href="#" class="text-primary">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" style="background-color: #1C3988;">Login</button>
+        </form>
+  
+        <div class="text-center mt-3">
+          <p>Don't have an account? <a routerLink="/register" class="text-primary">Register</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
