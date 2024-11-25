@@ -13,7 +13,8 @@ import { MapComponent } from "../map/map.component";
 })
 export class PropertyDetailsComponent implements OnInit{
   propertyId: number | null = null; 
-  property: Property | undefined;  
+  property: Property | undefined ;
+  propertyAddress : string = "";
 
   constructor(private route: ActivatedRoute, private propertyService: PropertyService) { }
 
@@ -31,6 +32,8 @@ export class PropertyDetailsComponent implements OnInit{
     this.propertyService.getOneProperties(id).subscribe(
       (property: Property) => {
         this.property = property;
+        this.propertyAddress = property.address;
+        console.log("rhahaha", this.propertyAddress);
       },
       (error) => {
         console.error('Error fetching property details:', error);

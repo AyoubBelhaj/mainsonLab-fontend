@@ -12,7 +12,8 @@
                     <option value="Villa">Villa</option>
                     <option value="Commercial">Commercial</option>
                 </select>
-                <input type="text" class="form-control bg-light" placeholder="📍 Location search" #key="ngModel" ngModel [ngModelOptions]="{standalone: true}" [(ngModel)]="searchLocation" (input)="filterOffers()"/>
+                <input type="text" class="form-control bg-light" placeholder="📍 Location search" #key="ngModel" ngModel
+                    [ngModelOptions]="{standalone: true}" [(ngModel)]="searchLocation" (input)="filterOffers()" />
                 <button class="btn btn-primary d-inline-flex align-items-center" type="submit"><svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search me-2" viewBox="0 0 16 16">
@@ -55,8 +56,9 @@
                 <div class="card me-3" *ngFor="let offer of filteredOffers" (click)="viewDetails(offer.id)">
                     <img [src]="offer.imageUrl" class="card-img-top" alt="Offer Image">
                     <div class="card-body">
-                        <h5 class="card-title">{{ offer.title }}</h5>
-                        <p class="card-text">{{ offer.description }}</p>
+                        <h5 class="card-title">{{offer.title}}</h5>
+                        <p class="card-text card-price">{{offer.price}}</p>
+                        <p class="card-text card-location">{{offer.location}}</p>
                     </div>
                 </div>
             </div>

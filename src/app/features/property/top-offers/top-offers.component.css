@@ -65,6 +65,21 @@ h2 {
     cursor: pointer;
 }
 
+.card-title {
+    font-weight: bold;
+    font-family: "Merriweather";
+    font-size: 21.25;
+}
+
+.card-price {
+    position: absolute;
+    bottom: 30px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 17;
+    color: #1C3988;
+}
+
 /* Progress Indicator */
 .progress-indicator {
     flex: 1;
