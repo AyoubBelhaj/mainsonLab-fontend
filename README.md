@@ -32,5 +32,5 @@ To use the environments variables correctly, create the environments folder use 
 then in the two files the dev and prod you put you variables 
 export const environment = {
     production: false,
-    mapboxApiKey: "Your Api Key"
+    mapboxApiKey: "pk.eyJ1IjoiYXlvdWJydiIsImEiOiJjbHhvdnRvdWQwZnh5MmpzZXYxY2VvOXYxIn0.ohCQFsXQ3BhGf4_xtVyuTg"
 };

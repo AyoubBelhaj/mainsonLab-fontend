@@ -25,11 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
+              "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/custom-theme.scss"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.js"]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,13 +94,22 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
+              
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+
+
             ],
             "scripts": []
+            
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "62bbb19d-fd4f-488a-b6ef-7a82089fa759"
   }
 }
